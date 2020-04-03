@@ -2,41 +2,19 @@
   <div id="q-app">
     <router-view />
 
-    <q-btn to="/" round icon="home" dense size="xs" class="fixed dev-home-btn z-max" color="accent" />
+    <button to="/" round icon="home" dense size="xs" class="fixed dev-home-btn z-max" color="accent" >首页</button>
 
-    <q-card
+    <div
       style="padding: 11px; right: 11px; bottom: 10px; z-index: 6000;"
       class="rounded-borders shadow-4 fixed"
     >
-      <q-btn dense flat size="sm" icon="visibility" @click="showSelector = !showSelector" class="absolute-top-right z-top" />
+      <button dense flat size="sm" icon="visibility" @click="showSelector = !showSelector" class="absolute-top-right z-top" >按钮1</button>
       <template v-if="showSelector">
         <q-toggle :value="$q.dark.isActive" @input="$q.dark.toggle" :label="`Dark Mode (${$q.dark.mode})`" />
 
-        <q-btn dense flat size="sm" :icon="lang === 'he' ? 'navigate_before' : 'navigate_next'" @click="lang = lang === 'en-us' ? 'he' : 'en-us'" class="absolute-bottom-right z-top" />
-        <q-select
-          label="Quasar Language"
-          dense
-          outlined
-          :options="langOptions"
-          emit-value
-          map-options
-          options-dense
-          v-model="lang"
-          style="min-width: 150px"
-          class="q-mb-xs"
-        />
-        <q-select
-          label="Icon set"
-          dense
-          outlined
-          :options="iconOptions"
-          options-dense
-          emit-value
-          map-options
-          v-model="iconSet"
-        />
+        <button dense flat size="sm" :icon="lang === 'he' ? 'navigate_before' : 'navigate_next'" @click="lang = lang === 'en-us' ? 'he' : 'en-us'" class="absolute-bottom-right z-top" >按钮2</button>
       </template>
-    </q-card>
+    </div>
   </div>
 </template>
 

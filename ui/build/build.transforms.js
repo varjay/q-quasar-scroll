@@ -120,9 +120,9 @@ module.exports.generate = function () {
   }
 
   addComponents(map, autoImport)
-  addDirectives(map, autoImport)
-  addPlugins(map)
-  addUtils(map)
+  // addDirectives(map, autoImport)
+  // addPlugins(map)
+  // addUtils(map)
 
   writeFile(
     resolvePath(`dist/babel-transforms/imports.js`),

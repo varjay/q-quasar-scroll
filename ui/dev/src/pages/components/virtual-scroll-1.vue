@@ -1,8 +1,8 @@
 <template>
-  <q-layout view="lHh LpR fFf">
-    <q-page-container>
-      <q-page padding>
-        <q-input
+  <div view="lHh LpR fFf">
+    <div>
+      <div padding>
+        <input
           type="number"
           standout
           dense
@@ -17,43 +17,38 @@
         <div class="text-h6 q-mt-lg">
           Heavy test - Different components ({{ size.toLocaleString() }} items)
         </div>
-        <q-list class="q-my-md bg-grey-10">
+        <div class="q-my-md bg-grey-10">
           <q-virtual-scroll
             style="max-height: 300px;"
             :items="heavyList"
           >
             <template v-slot="{ item, index }">
-              <q-item
+              <div
                 v-if="(index % 3) === 0"
                 :key="index"
                 dense
                 dark
                 clickable
               >
-                <q-item-section>
-                  <q-item-label>
+                <div>
+                  <div>
                     Option - {{ item.label }} #{{ index }}
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-banner v-else-if="(index % 5) === 0" class="bg-negative" :key="index">
-                <template v-slot:avatar>
-                  <q-avatar square color="warning" text-color="negative">
-                    {{ item.value }}
-                  </q-avatar>
-                </template>
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="(index % 5) === 0" class="bg-negative" :key="index">
                 {{ item.label }} #{{ index }}
-              </q-banner>
+              </div>
               <div v-else class="bg-yellow q-py-lg text-center" :key="index">
                 {{ item.label }} #{{ index }}
               </div>
             </template>
           </q-virtual-scroll>
-        </q-list>
+        </div>
 
         <div class="text-h6 q-mt-lg row items-center justify-between">
           Heavy test - Variable size ({{ size.toLocaleString() }} items)
-          <q-input
+          <input
             type="number"
             standout
             dense
@@ -66,33 +61,33 @@
             @change="$refs.vList.scrollTo(scrollTo)"
           />
         </div>
-        <q-virtual-scroll component="q-list" ref="vList" :items="heavyList" separator class="q-my-md" style="max-height: 300px;">
+        <q-virtual-scroll component="q-list" ref="vList" :items="heavyList" class="q-my-md" style="max-height: 300px;">
           <template v-slot="{ item, index }">
-            <q-item :key="index">
-              <q-item-section>
-                <q-item-label>
+            <div :key="index">
+              <div>
+                <div>
                   {{ item.label }} #{{ index }}
-                </q-item-label>
+                </div>
 
-                <q-item-label class="q-py-sm" v-if="(index % 5) === 0">
+                <div class="q-py-sm" v-if="(index % 5) === 0">
                   {{ item.label }}
-                </q-item-label>
+                </div>
 
-                <q-item-label class="q-py-md text-negative" v-if="(index % 3) === 0">
+                <div class="q-py-md text-negative" v-if="(index % 3) === 0">
                   {{ item.value }}
-                </q-item-label>
+                </div>
 
-                <q-item-label class="q-py-lg text-positive" v-if="(index % 4) === 0">
+                <div class="q-py-lg text-positive" v-if="(index % 4) === 0">
                   {{ index }} - {{ item.label }} - {{ item.value }}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+                </div>
+              </div>
+            </div>
           </template>
         </q-virtual-scroll>
 
         <div class="text-h6 q-mt-lg row items-center justify-between">
           Horizontal - Variable size ({{ size.toLocaleString() }} items)
-          <q-input
+          <input
             type="number"
             standout
             dense
@@ -108,22 +103,18 @@
         <q-virtual-scroll ref="vListH" virtual-scroll-horizontal :items="heavyList" class="q-my-md" style="max-width: 80vw; margin-bottom: 200vh;">
           <template v-slot="{ item, index }">
             <div class="row no-wrap items-center" :key="index">
-              <q-avatar square color="warning" text-color="negative">
-                {{ item.value }}
-              </q-avatar>
               <div class="bg-grey-4" :class="{ 'q-pa-sm': (index % 3) === 0, 'q-pa-xl': (index % 3) === 1, 'q-pa-md': (index % 3) === 2 }">
                 {{ item.label }}
               </div>
               <div class="bg-grey-10 text-white q-pa-sm">
                 #{{ index }}
               </div>
-              <q-separator v-if="index < heavyList.length - 1" vertical spaced />
             </div>
           </template>
         </q-virtual-scroll>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
