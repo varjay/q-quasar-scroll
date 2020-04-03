@@ -9,31 +9,23 @@
       </div>
 
       <div class="q-pt-md">
-        <q-input ref="filter" clearable outlined v-model="filter">
-          <template v-slot:prepend>
-            <q-icon name="search" />
-          </template>
-        </q-input>
+        <input ref="filter" clearable outlined v-model="filter" placeholder="search" />
       </div>
 
-      <q-list dense class="q-mb-xl">
+      <div dense class="q-mb-xl">
         <template v-for="(category, title) in filteredList">
-          <q-item-label :key="`category-${title}`" header class="q-mt-lg text-uppercase text-weight-bold">
+          <div :key="`category-${title}`" header class="q-mt-lg text-uppercase text-weight-bold">
             {{ title }}
-          </q-item-label>
+          </div>
 
-          <q-item
+          <router-link
+            tag="div"
             v-for="feature in category"
             :key="`${feature.route}${feature.title}`"
             :to="feature.route"
-          >
-            <q-item-section>{{ feature.title }}</q-item-section>
-            <q-item-section side>
-              <q-icon name="chevron_right" />
-            </q-item-section>
-          </q-item>
+          >{{ feature.title }}</router-link>
         </template>
-      </q-list>
+      </div>
     </div>
   </div>
 </template>
@@ -62,7 +54,7 @@ export default {
 
   mounted () {
     if (process.env.MODE === 'ssr') {
-      this.clientInitStore(this.store)
+      // this.clientInitStore(this.store)
     }
 
     window.addEventListener('keydown', this.onKeyup, { passive: false, capture: true })
@@ -77,7 +69,7 @@ export default {
     const store = { filter: '' }
 
     if (process.env.MODE !== 'ssr') {
-      this.clientInitStore(store)
+      // this.clientInitStore(store)
     }
 
     return { store }

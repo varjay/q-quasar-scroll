@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh LpR fFf">
-    <q-page-container>
-      <q-page padding class="bg-white q-pr-xl">
+  <div view="lHh LpR fFf">
+    <div>
+      <div padding class="bg-white q-pr-xl">
         <div class="bg-grey-2" style="height: 60vh">
           Spacer
         </div>
@@ -13,25 +13,20 @@
           </div>
           <q-virtual-scroll component="q-list" :items="heavyList" separator :scroll-target="scrollTarget" @virtual-scroll="onVirtualScroll1">
             <template v-slot="{ item, index }">
-              <q-item
+              <div
                 v-if="(index % 3) === 0"
                 :key="index"
                 clickable
               >
-                <q-item-section>
-                  <q-item-label class="q-px-xl">
+                <div>
+                  <div class="q-px-xl">
                     Option - {{ item.label }} #{{ index }}
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-banner v-else-if="(index % 5) === 0" class="bg-negative" :key="index">
-                <template v-slot:avatar>
-                  <q-avatar square color="warning" text-color="negative">
-                    {{ item.value }}
-                  </q-avatar>
-                </template>
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="(index % 5) === 0" class="bg-negative" :key="index">
                 {{ item.label }} #{{ index }}
-              </q-banner>
+              </div>
               <div v-else class="bg-yellow q-py-lg text-center scroll" :key="index" style="max-height: 100px">
                 {{ item.label }} #{{ index }}
               </div>
@@ -44,7 +39,7 @@
 
         <div class="q-pa-md">
           <div class="q-pa-md">
-            <q-input
+            <input
               type="number"
               :value="virtualListIndex2"
               :min="0"
@@ -65,7 +60,7 @@
             @virtual-scroll="onVirtualScroll2"
           >
             <template v-slot="{ item, index }">
-              <q-item
+              <div
                 :key="index"
                 dense
                 :class="{
@@ -74,18 +69,18 @@
                 }"
                 :style="index === 99999 ? 'height: 800px' : void 0"
               >
-                <q-item-section>
-                  <q-item-label>
+                <div>
+                  <div>
                     #{{ index }} - {{ item.label }}
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
+                  </div>
+                </div>
+              </div>
             </template>
           </q-virtual-scroll>
         </div>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

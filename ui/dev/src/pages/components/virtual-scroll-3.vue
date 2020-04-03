@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh LpR fFf">
-    <q-page-container>
-      <q-page padding :style-fn="offset => ({ height: ($q.screen.height - offset) + 'px' })" class="column">
+  <div view="lHh LpR fFf">
+    <div>
+      <div padding :style-fn="offset => ({ height: ($q.screen.height - offset) + 'px' })" class="column">
         <div class="text-h6 q-my-lg">
           Virtual list with dynamic generated items ({{ size.toLocaleString() }} items)
         </div>
@@ -16,40 +16,34 @@
           ref="list"
         >
           <template v-slot="{ item, index }">
-            <q-item :key="index">
-              <q-item-section avatar>
-                <q-avatar :color="item.avatarColor" text-color="white">
-                  {{ item.avatarLetter }}
-                </q-avatar>
-              </q-item-section>
-
-              <q-item-section>
-                <q-item-label>
+            <div :key="index">
+              <div>
+                <div>
                   {{ item.label }}
-                </q-item-label>
-              </q-item-section>
+                </div>
+              </div>
 
-              <q-item-section side top>
-                <q-item-label caption>
+              <div side top>
+                <div caption>
                   #{{ index }}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+                </div>
+              </div>
+            </div>
           </template>
         </q-virtual-scroll>
 
         <div class="q-pa-md row justify-between">
-          <q-btn label="+1e5" @click="() => { size += 1e5 }" />
-          <q-btn label="+1e4" @click="() => { size += 1e4 }" />
-          <q-btn label="+1e3" @click="() => { size += 1e3 }" />
-          <q-btn label="-1e3" @click="() => { size -= size > 1e3 ? 1e3 : size }" />
-          <q-btn label="-1e4" @click="() => { size -= size > 1e4 ? 1e4 : size }" />
-          <q-btn label="-1e5" @click="() => { size -= size > 1e5 ? 1e5 : size }" />
-          <q-btn label="End" @click="() => { $refs.list.scrollTo(size) }" />
+          <button label="+1e5" @click="() => { size += 1e5 }" />
+          <button label="+1e4" @click="() => { size += 1e4 }" />
+          <button label="+1e3" @click="() => { size += 1e3 }" />
+          <button label="-1e3" @click="() => { size -= size > 1e3 ? 1e3 : size }" />
+          <button label="-1e4" @click="() => { size -= size > 1e4 ? 1e4 : size }" />
+          <button label="-1e5" @click="() => { size -= size > 1e5 ? 1e5 : size }" />
+          <button label="End" @click="() => { $refs.list.scrollTo(size) }" />
         </div>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh LpR fFf">
-    <q-page-container>
-      <q-page padding class="bg-white q-pr-xl">
+  <div view="lHh LpR fFf">
+    <div>
+      <div padding class="bg-white q-pr-xl">
         <q-virtual-scroll
           ref="virtualListRef"
           type="table"
@@ -54,7 +54,7 @@
                     {{ row[column] }} again again
                   </div>
                 </template>
-                <q-img v-else :src="row[column].src" :style="setSize ? { height: (2 * row[column].height) + 'px', width: (2 * row[column].width) + 'px' } : void 0" />
+                <img v-else :src="row[column].src" :style="setSize ? { height: (2 * row[column].height) + 'px', width: (2 * row[column].width) + 'px' } : void 0" />
               </td>
             </tr>
           </template>
@@ -62,7 +62,7 @@
 
         <div class="row q-pa-md">
           <div class="col">
-            <q-input
+            <input
               type="number"
               :value="listIndex"
               :min="0"
@@ -73,11 +73,11 @@
               @input="onIndexChange"
             />
           </div>
-          <q-toggle v-model="setSize" label="Preset size" />
+          <input v-model="setSize" type="number" placeholder="Preset size" name="">
         </div>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="stylus">

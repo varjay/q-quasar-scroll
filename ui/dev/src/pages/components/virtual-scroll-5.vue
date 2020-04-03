@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="lHh LpR fFf">
-    <q-page-container>
-      <q-page padding class="bg-white q-pr-xl">
+  <div view="lHh LpR fFf">
+    <div>
+      <div padding class="bg-white q-pr-xl">
         <q-virtual-scroll
           ref="virtualListRef"
           type="table"
@@ -58,7 +58,7 @@
         </q-virtual-scroll>
 
         <div class="q-pa-md">
-          <q-input
+          <input
             type="number"
             :value="listIndex"
             :min="0"
@@ -68,9 +68,9 @@
             @input="onIndexChange"
           />
         </div>
-      </q-page>
-    </q-page-container>
-  </q-layout>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="stylus">
