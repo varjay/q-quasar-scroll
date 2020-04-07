@@ -1,9 +1,9 @@
 import VuePlugin from './vue-plugin.js'
 
 import * as components from './components.js'
-// import * as directives from './directives.js'
-// import * as plugins from './plugins.js'
-// import * as utils from './utils.js'
+import * as directives from './directives.js'
+import * as plugins from './plugins.js'
+import * as utils from './utils.js'
 
 export default {
   // for when importing all
@@ -11,8 +11,8 @@ export default {
   install (Vue, opts) {
     VuePlugin.install(Vue, {
       components,
-      // directives,
-      // plugins,
+      directives,
+      plugins,
       ...opts
     })
   },
@@ -21,7 +21,7 @@ export default {
   Quasar: VuePlugin,
 
   ...components,
-  // ...directives,
-  // ...plugins,
-  // ...utils
+  ...directives,
+  ...plugins,
+  ...utils
 }
