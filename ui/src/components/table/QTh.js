@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import QIcon from '../icon/QIcon.js'
+// import QIcon from '../icon/QIcon.js'
 
 import { slot, uniqueSlot } from '../../utils/slot.js'
 
@@ -40,10 +40,10 @@ export default Vue.extend({
 
       child = uniqueSlot(this, 'default', [])
       child[action](
-        h(QIcon, {
-          props: { name: this.$q.iconSet.table.arrowUp },
-          staticClass: col.__iconClass
-        })
+        // h(QIcon, {
+        //   props: { name: this.$q.iconSet.table.arrowUp },
+        //   staticClass: col.__iconClass
+        // })
       )
     }
     else {

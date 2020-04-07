@@ -1,5 +1,5 @@
-import QCheckbox from '../checkbox/QCheckbox.js'
-import QSeparator from '../separator/QSeparator.js'
+// import QCheckbox from '../checkbox/QCheckbox.js'
+// import QSeparator from '../separator/QSeparator.js'
 
 export default {
   methods: {
@@ -16,22 +16,22 @@ export default {
 
           this.hasSelectionMode === true && child.unshift(
             h('div', { staticClass: 'q-table__grid-item-row' }, [
-              h(QCheckbox, {
-                props: {
-                  value: scope.selected,
-                  color: this.color,
-                  dark: this.isDark,
-                  dense: true
-                },
-                on: {
-                  input: val => {
-                    scope.selected = val
-                  }
-                }
-              })
+              // h(QCheckbox, {
+              //   props: {
+              //     value: scope.selected,
+              //     color: this.color,
+              //     dark: this.isDark,
+              //     dense: true
+              //   },
+              //   on: {
+              //     input: val => {
+              //       scope.selected = val
+              //     }
+              //   }
+              // })
             ]),
 
-            h(QSeparator, { props: { dark: this.isDark } })
+            // h(QSeparator, { props: { dark: this.isDark } })
           )
 
           const data = {

@@ -1,4 +1,4 @@
-import QCheckbox from '../checkbox/QCheckbox.js'
+// import QCheckbox from '../checkbox/QCheckbox.js'
 import QTh from './QTh.js'
 
 import { cache } from '../../utils/vm.js'
@@ -65,28 +65,28 @@ export default {
       }
       else if (this.multipleSelection === true) {
         child.unshift(h('th', { staticClass: 'q-table--col-auto-width' }, [
-          h(QCheckbox, {
-            props: {
-              color: this.color,
-              value: this.someRowsSelected === true
-                ? null
-                : this.allRowsSelected,
-              dark: this.isDark,
-              dense: this.dense
-            },
-            on: cache(this, 'inp', {
-              input: val => {
-                if (this.someRowsSelected === true) {
-                  val = false
-                }
-                this.__updateSelection(
-                  this.computedRows.map(this.getRowKey),
-                  this.computedRows,
-                  val
-                )
-              }
-            })
-          })
+          // h(QCheckbox, {
+          //   props: {
+          //     color: this.color,
+          //     value: this.someRowsSelected === true
+          //       ? null
+          //       : this.allRowsSelected,
+          //     dark: this.isDark,
+          //     dense: this.dense
+          //   },
+          //   on: cache(this, 'inp', {
+          //     input: val => {
+          //       if (this.someRowsSelected === true) {
+          //         val = false
+          //       }
+          //       this.__updateSelection(
+          //         this.computedRows.map(this.getRowKey),
+          //         this.computedRows,
+          //         val
+          //       )
+          //     }
+          //   })
+          // })
         ]))
       }
 

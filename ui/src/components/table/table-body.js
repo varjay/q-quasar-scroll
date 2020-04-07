@@ -1,4 +1,4 @@
-import QCheckbox from '../checkbox/QCheckbox.js'
+// import QCheckbox from '../checkbox/QCheckbox.js'
 
 export default {
   methods: {
@@ -35,19 +35,19 @@ export default {
 
       this.hasSelectionMode === true && child.unshift(
         h('td', { staticClass: 'q-table--col-auto-width' }, [
-          h(QCheckbox, {
-            props: {
-              value: selected,
-              color: this.color,
-              dark: this.isDark,
-              dense: this.dense
-            },
-            on: {
-              input: adding => {
-                this.__updateSelection([ key ], [ row ], adding)
-              }
-            }
-          })
+          // h(QCheckbox, {
+          //   props: {
+          //     value: selected,
+          //     color: this.color,
+          //     dark: this.isDark,
+          //     dense: this.dense
+          //   },
+          //   on: {
+          //     input: adding => {
+          //       this.__updateSelection([ key ], [ row ], adding)
+          //     }
+          //   }
+          // })
         ])
       )
 

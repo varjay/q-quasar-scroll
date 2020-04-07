@@ -1,6 +1,6 @@
-import QSelect from '../select/QSelect.js'
-import QBtn from '../btn/QBtn.js'
-import QIcon from '../icon/QIcon.js'
+// import QSelect from '../select/QSelect.js'
+// import QBtn from '../btn/QBtn.js'
+// import QIcon from '../icon/QIcon.js'
 
 import { cache } from '../../utils/vm.js'
 
@@ -27,10 +27,10 @@ export default {
         const children = noData !== void 0
           ? [ noData({ message, icon: this.$q.iconSet.table.warning, filter: this.filter }) ]
           : [
-            h(QIcon, {
-              staticClass: 'q-table__bottom-nodata-icon',
-              props: { name: this.$q.iconSet.table.warning }
-            }),
+            // h(QIcon, {
+            //   staticClass: 'q-table__bottom-nodata-icon',
+            //   props: { name: this.$q.iconSet.table.warning }
+            // }),
             message
           ]
 
@@ -73,30 +73,30 @@ export default {
             h('span', { staticClass: 'q-table__bottom-item' }, [
               this.rowsPerPageLabel || this.$q.lang.table.recordsPerPage
             ]),
-            h(QSelect, {
-              staticClass: 'q-table__select inline q-table__bottom-item',
-              props: {
-                color: this.color,
-                value: rowsPerPage,
-                options: this.computedRowsPerPageOptions,
-                displayValue: rowsPerPage === 0
-                  ? this.$q.lang.table.allRows
-                  : rowsPerPage,
-                dark: this.isDark,
-                borderless: true,
-                dense: true,
-                optionsDense: true,
-                optionsCover: true
-              },
-              on: cache(this, 'pgSize', {
-                input: pag => {
-                  this.setPagination({
-                    page: 1,
-                    rowsPerPage: pag.value
-                  })
-                }
-              })
-            })
+            // h(QSelect, {
+            //   staticClass: 'q-table__select inline q-table__bottom-item',
+            //   props: {
+            //     color: this.color,
+            //     value: rowsPerPage,
+            //     options: this.computedRowsPerPageOptions,
+            //     displayValue: rowsPerPage === 0
+            //       ? this.$q.lang.table.allRows
+            //       : rowsPerPage,
+            //     dark: this.isDark,
+            //     borderless: true,
+            //     dense: true,
+            //     optionsDense: true,
+            //     optionsCover: true
+            //   },
+            //   on: cache(this, 'pgSize', {
+            //     input: pag => {
+            //       this.setPagination({
+            //         page: 1,
+            //         rowsPerPage: pag.value
+            //       })
+            //     }
+            //   })
+            // })
           ])
         )
       }
@@ -117,31 +117,31 @@ export default {
           const size = this.dense === true ? 'sm' : void 0
 
           control.push(
-            h(QBtn, {
-              props: {
-                color: this.color,
-                round: true,
-                icon: this.navIcon[0],
-                dense: true,
-                flat: true,
-                size,
-                disable: this.isFirstPage
-              },
-              on: cache(this, 'pgPrev', { click: this.prevPage })
-            }),
+            // h(QBtn, {
+            //   props: {
+            //     color: this.color,
+            //     round: true,
+            //     icon: this.navIcon[0],
+            //     dense: true,
+            //     flat: true,
+            //     size,
+            //     disable: this.isFirstPage
+            //   },
+            //   on: cache(this, 'pgPrev', { click: this.prevPage })
+            // }),
 
-            h(QBtn, {
-              props: {
-                color: this.color,
-                round: true,
-                icon: this.navIcon[1],
-                dense: true,
-                size,
-                flat: true,
-                disable: this.isLastPage
-              },
-              on: cache(this, 'pgNext', { click: this.nextPage })
-            })
+            // h(QBtn, {
+            //   props: {
+            //     color: this.color,
+            //     round: true,
+            //     icon: this.navIcon[1],
+            //     dense: true,
+            //     size,
+            //     flat: true,
+            //     disable: this.isLastPage
+            //   },
+            //   on: cache(this, 'pgNext', { click: this.nextPage })
+            // })
           )
         }
       }
