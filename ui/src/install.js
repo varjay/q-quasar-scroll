@@ -1,14 +1,14 @@
 import { version } from '../package.json'
 import Platform, { isSSR } from './plugins/Platform.js'
-import Screen from './plugins/Screen.js'
+// import Screen from './plugins/Screen.js'
 import Dark from './plugins/Dark.js'
-import History from './history.js'
-import Lang from './lang.js'
-import Body from './body.js'
-import IconSet from './icon-set.js'
+// import History from './history.js'
+// import Lang from './lang.js'
+// import Body from './body.js'
+// import IconSet from './icon-set.js'
 
 const autoInstalled = [
-  Platform, Screen, Dark
+  Dark
 ]
 
 export const queues = {
@@ -28,13 +28,13 @@ export default function (Vue, opts = {}) {
   const cfg = $q.config = Object.freeze(opts.config || {})
 
   // required plugins
-  Platform.install($q, queues)
-  Body.install(queues, cfg)
+  // Platform.install($q, queues)
+  // Body.install(queues, cfg)
   Dark.install($q, queues, cfg)
-  Screen.install($q, queues, cfg)
-  History.install(cfg)
-  Lang.install($q, queues, opts.lang)
-  IconSet.install($q, opts.iconSet)
+  // Screen.install($q, queues, cfg)
+  // History.install(cfg)
+  // Lang.install($q, queues, opts.lang)
+  // IconSet.install($q, opts.iconSet)
 
   if (isSSR === true) {
     Vue.mixin({
