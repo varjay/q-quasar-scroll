@@ -104,7 +104,6 @@ function generateStylusAddon () {
   return generateStylusFiles({
     sources: [
       'src/css/variables.styl',
-      'src/css/flex-addon.styl'
     ],
     name: '.addon'
   })
@@ -178,10 +177,8 @@ module.exports = function () {
   Promise
     .all([
       generateStylusBase('src/css/index.styl'),
-      generateStylusAddon(),
 
       generateSassFile('src/css/index.sass', 'dist/quasar.sass'),
-      validateSassFile('src/css/flex-addon.sass')
     ])
     .catch(e => {
       console.error(e)

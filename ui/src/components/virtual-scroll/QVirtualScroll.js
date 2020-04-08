@@ -1,8 +1,8 @@
 import Vue from 'vue'
 
 import QList from '../item/QList.js'
-import QMarkupTable from '../markup-table/QMarkupTable.js'
-import getTableMiddle from '../table/get-table-middle.js'
+// import QMarkupTable from '../markup-table/QMarkupTable.js'
+// import getTableMiddle from '../table/get-table-middle.js'
 import VirtualScroll from '../../mixins/virtual-scroll.js'
 import { getScrollTarget } from '../../utils/scroll.js'
 
@@ -11,7 +11,7 @@ import { mergeSlot } from '../../utils/slot.js'
 
 const comps = {
   list: QList,
-  table: QMarkupTable
+  // table: QMarkupTable
 }
 
 export default Vue.extend({
@@ -136,9 +136,7 @@ export default Vue.extend({
 
     child = mergeSlot(child, this, 'after')
 
-    return this.type === '__qtable'
-      ? getTableMiddle(h, { staticClass: this.classes }, child)
-      : h(comps[this.type], {
+    return h(comps[this.type], {
         class: this.classes,
         attrs: this.attrs,
         props: this.$attrs,

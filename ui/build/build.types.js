@@ -244,7 +244,7 @@ function writeIndexDTS (apis) {
   var directives = []
   var plugins = []
 
-  addQuasarLangCodes(quasarTypeContents)
+  // addQuasarLangCodes(quasarTypeContents)
 
   writeLine(contents, `import Vue, { VueConstructor, PluginObject } from 'vue'`)
   writeLine(contents, `import { LooseDictionary } from './ts-helpers'`)

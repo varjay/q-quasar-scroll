@@ -56,30 +56,6 @@ const builds = [
   {
     rollup: {
       input: {
-        input: resolve('src/ie-compat/ie.js')
-      },
-      output: {
-        file: resolve('dist/quasar.ie.polyfills.js'),
-        format: 'es'
-      }
-    },
-    build: { minified: true, minExt: false }
-  },
-  {
-    rollup: {
-      input: {
-        input: resolve('src/ie-compat/ie.js')
-      },
-      output: {
-        file: resolve('dist/quasar.ie.polyfills.umd.js'),
-        format: 'umd'
-      }
-    },
-    build: { minified: true }
-  },
-  {
-    rollup: {
-      input: {
         input: resolve(`src/index.umd.js`)
       },
       output: {
@@ -206,17 +182,13 @@ function buildEntry (config) {
 }
 
 module.exports = function () {
-  require('./build.lang-index').generate()
-    .then(() => require('./build.svg-icon-sets').generate())
-    .then(() => require('./build.api').generate())
+  require('./build.api').generate()
     .then(data => {
       require('./build.transforms').generate()
       require('./build.vetur').generate(data)
       require('./build.types').generate(data)
       require('./build.web-types').generate(data)
 
-      addAssets(builds, 'lang', 'lang')
-      addAssets(builds, 'icon-set', 'iconSet')
       build(builds)
     })
 }
