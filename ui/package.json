@@ -1,6 +1,6 @@
 {
   "name": "q-virtual-scroll",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Build high-performance VueJS user interfaces (SPA, PWA, SSR, Mobile and Desktop) in record time",
   "module": "src/index.esm.js",
   "typings": "dist/types/index.d.ts",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/varjay/q-quasar-scroll.git"
+    "url": "git+https://github.com/varjay/q-quasar-scroll/tree/dev/ui"
   },
   "keywords": [
     "vuejs",

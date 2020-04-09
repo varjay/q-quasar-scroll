@@ -2,11 +2,9 @@
 
 # Quasar Components - QVirtualScroll
 
-> Build responsive Single Page Apps, **SSR Apps**, PWAs, Hybrid Mobile Apps and Electron Apps, all using the same codebase!, powered with Vue.
+> Extract the q-virtual-scroll component so that you can use it without introducing the entire library.
 
 <img src="https://img.shields.io/npm/v/quasar.svg?label=quasar">
-
-Please submit a PR to https://github.com/quasarframework/quasar-awesome with your website/app/Quasar tutorial/video etc. Thank you!
 
 ## Installation
 `$ npm install q-virtual-scroll --save`
