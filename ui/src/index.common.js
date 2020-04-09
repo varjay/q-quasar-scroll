@@ -1,25 +1,7 @@
-import VuePlugin from './vue-plugin.js'
-
-import * as components from './components.js'
-// import * as directives from './directives.js'
-// import * as plugins from './plugins.js'
+import {QVirtualScroll} from './components/virtual-scroll/index.js'
 
 export default {
-  // for when importing all
-  ...VuePlugin,
-  install (Vue, opts) {
-    VuePlugin.install(Vue, {
-      components,
-      // directives,
-      // plugins,
-      ...opts
-    })
+  install (Vue) {
+    Vue.component('QVirtualScroll', QVirtualScroll)
   },
-
-  // for when cherry-picking
-  Quasar: VuePlugin,
-
-  ...components,
-  // ...directives,
-  // ...plugins,
 }

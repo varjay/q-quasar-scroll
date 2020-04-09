@@ -1,15 +1,9 @@
-import VuePlugin from './vue-plugin.js'
-
-import * as components from './components.js'
+import {QVirtualScroll} from './components/virtual-scroll/index.js'
 
 export * from './components.js'
 
 export default {
-  ...VuePlugin,
-  install (Vue, opts) {
-    VuePlugin.install(Vue, {
-      components,
-      ...opts
-    })
+  install (Vue) {
+    Vue.component('QVirtualScroll', QVirtualScroll)
   }
 }
