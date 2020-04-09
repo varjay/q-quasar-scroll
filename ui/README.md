@@ -8,6 +8,17 @@
 
 Please submit a PR to https://github.com/quasarframework/quasar-awesome with your website/app/Quasar tutorial/video etc. Thank you!
 
+## Installation
+`$ npm install q-virtual-scroll --save`
+
+## Usage
+
+```javascript
+import QVirtualScroll from 'q-virtual-scroll'
+import 'q-virtual-scroll/dist/quasar.css'
+Vue.use(QVirtualScroll)
+```
+
 ## Documentation
 
 Head on to the Quasar Framework official website: [virtual-scroll](https://quasar.dev/vue-components/virtual-scroll)
