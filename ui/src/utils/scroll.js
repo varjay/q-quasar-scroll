@@ -13,7 +13,10 @@ export function getScrollTarget (el, target) {
   }
 
   if (target === void 0 || target === null) {
-    target = el.closest('.scroll,.scroll-y,.overflow-auto')
+    // 为兼容性修改
+    target = el
+    // closest 只支持chrome41以后
+    // target = el.closest('.scroll,.scroll-y,.overflow-auto')
   }
   else if (target._isVue === true && target.$el !== void 0) {
     target = target.$el
