@@ -130,7 +130,7 @@ export default Vue.extend({
       this.virtualScrollScope.map(this.$scopedSlots.default)
     )
 
-    if (this.$scopedSlots.before() !== void 0) {
+    if (this.$scopedSlots.before && this.$scopedSlots.before() !== void 0) {
       child = this.$scopedSlots.before().concat(child)
     }
 
